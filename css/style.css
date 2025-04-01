@@ -1,0 +1,258 @@
+
+
+
+  
+  /* -----------------------------------------------------
+     2) Basic Resets / Global
+     ----------------------------------------------------- */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html {
+    font-size: var(--font-size-base);
+    background: var(--color-bg);
+    color: var(--color-text);
+  }
+  
+  body {
+    font-family: var(--font-primary);
+    line-height: 1.5;
+  }
+  
+  /* A class for our skip link */
+  .skip-to-content {
+    position: absolute;
+    top: -999px;
+    left: -999px;
+    background: var(--color-primary);
+    color: #fff;
+    padding: var(--spacing-xs);
+    z-index: 1000;
+  }
+  .skip-to-content:focus {
+    top: 0;
+    left: 0;
+  }
+  
+  /* -----------------------------------------------------
+     3) Header & Nav
+     ----------------------------------------------------- */
+  header {
+    padding: var(--spacing-sm);
+    background: var(--color-bg);
+    border-bottom: 1px solid #eee;
+  }
+  
+  nav ul {
+    display: flex;
+    gap: var(--spacing-sm);
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  nav a {
+    text-decoration: none;
+    font-weight: 600;
+    color: var(--color-text);
+    padding: var(--spacing-xxs) var(--spacing-xs);
+    border-radius: 3px;
+  }
+  
+  nav a:hover,
+  nav a:focus {
+    background: var(--color-accent);
+    color: #fff;
+  }
+  
+  /* -----------------------------------------------------
+     4) Main Content
+     ----------------------------------------------------- */
+  main {
+    padding: var(--spacing-md);
+    transition: opacity 0.3s ease-out; /* for fade animations */
+  }
+  
+  /* Fade-out class for transitions */
+  .fade-out {
+    opacity: 0;
+  }
+  
+  /* Headings */
+  h1 {
+    font-size: var(--font-size-h1);
+    margin-bottom: var(--spacing-sm);
+  }
+  h2 {
+    font-size: var(--font-size-h2);
+    margin-bottom: var(--spacing-sm);
+  }
+  h3 {
+    font-size: var(--font-size-h3);
+    margin-bottom: var(--spacing-xs);
+  }
+  p {
+    margin-bottom: var(--spacing-sm);
+  }
+  
+  /* Example figure styling */
+  figure {
+    margin: var(--spacing-sm) 0;
+  }
+  figcaption {
+    font-size: 0.875rem;
+    color: #666;
+  }
+  
+  /* -----------------------------------------------------
+     5) Footer
+     ----------------------------------------------------- */
+  footer {
+    background: var(--color-footer-bg);
+    padding: var(--spacing-sm);
+    text-align: center;
+  }
+  #year {
+    font-weight: 600;
+  }
+  
+  /* -----------------------------------------------------
+     6) Media Queries
+     ----------------------------------------------------- */
+  /* Tablet and up */
+  @media screen and (min-width: var(--bp-tablet)) {
+    nav ul {
+      gap: var(--spacing-md);
+    }
+    main {
+      padding: var(--spacing-lg);
+    }
+    h1 {
+      font-size: calc(var(--font-size-h1) * 1.1);
+    }
+  }
+  
+  /* Desktop and up */
+  @media screen and (min-width: var(--bp-desktop)) {
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    
+    nav ul {
+      gap: var(--spacing-lg);
+    }
+    
+    h1 {
+      font-size: calc(var(--font-size-h1) * 1.2);
+    }
+  }
+  
+  /* Large Desktop */
+  @media screen and (min-width: var(--bp-large-desktop)) {
+    h1 {
+      font-size: calc(var(--font-size-h1) * 1.3);
+    }
+  }
+
+
+
+  /* 1) MIXED-FONT HEADER 
+   - "AL" in Figma Hand, rest in Lava Devanagari (or your chosen body font) */
+
+.mixed-header {
+    font-size: var(--font-size-h2); /* or bigger if you prefer */
+    margin-bottom: var(--spacing-md);
+    line-height: 1.2; /* to give it a bold, large look */
+  }
+  
+  .mixed-header .brand-al {
+    /* Figma Hand for "AL" */
+    font-family: 'Figma Hand', cursive; /* Replace with your actual @font-face or external link */
+    font-weight: 700; /* If needed. Adjust to your preference. */
+  }
+  
+  .mixed-header .regular-font {
+    /* Lava Devanagari or your normal font */
+    font-family: 'Lava Devanagari', var(--font-primary), sans-serif;
+  }
+  
+  /* 2) PROMO BOX CONTAINER */
+  
+  .promo-box {
+    position: relative;
+    background: var(--color-bg);
+    border-radius: 1rem; /* Rounded corners */
+    padding: var(--spacing-md);
+    margin-bottom: var(--spacing-lg);
+  
+    /* Optional shadow or border */
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    /* or a subtle border: border: 1px solid #eee; */
+  }
+  
+  .promo-text {
+    font-size: 1.25rem; /* slightly smaller than your big headers, but still large */
+    margin-bottom: var(--spacing-sm);
+    line-height: 1.4;
+  }
+  
+  /* 3) BUTTON STYLING 
+     - A general .btn class if you’re repeating this style across the site 
+     - Then .work-with-al if you want further variations. */
+  
+  .btn {
+    display: inline-block;
+    text-decoration: none;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border: none;
+    border-radius: 4px;
+    font-weight: 600;
+    cursor: pointer;
+    /* Example color scheme: brand color background, white text. */
+    background-color: var(--color-primary);
+    color: #fff;
+  }
+  
+  .btn:hover,
+  .btn:focus {
+    background-color: var(--color-secondary);
+  }
+  
+  /* .work-with-al specifically if you want different color/size: */
+  .work-with-al {
+    /* optional overrides, e.g.:
+    background-color: var(--color-accent);
+    min-width: 160px; 
+    */
+  }
+  
+  /* 4) PEEKING IMAGE 
+     - Place it in bottom-right corner, partially out of the container */
+  
+  .promo-image {
+    position: absolute;
+    bottom: -1rem;  /* move the image partially out of the container */
+    right: -1rem;   /* likewise for the right side */
+    width: 150px;   /* adjust as needed */
+    height: auto;
+    pointer-events: none; /* it’s decorative, so no clicks needed */
+    z-index: 0;     /* behind text if overlapping */
+  }
+  
+  /* 5) Screen Reader Only class (optional) 
+     - If you want to hide <h3 id="promo-box-title"> visually but keep it for screen readers */
+  .sr-only {
+    position: absolute !important;
+    width: 1px; 
+    height: 1px; 
+    padding: 0; 
+    margin: -1px; 
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap; 
+    border: 0;
+  }
