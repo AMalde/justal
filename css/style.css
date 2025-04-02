@@ -41,13 +41,15 @@
      3) Header & Nav
      ----------------------------------------------------- */
   header {
-    padding: var(--spacing-sm);
+    padding: var(--spacing-lg);
     background: var(--color-bg);
     border-bottom: 1px solid #eee;
   }
   
   nav ul {
+    text-align: center;
     display: flex;
+    justify-content: center;
     gap: var(--spacing-sm);
     list-style: none;
     padding-left: 0;
@@ -55,7 +57,8 @@
   
   nav a {
     text-decoration: none;
-    font-weight: 600;
+    font-size: var(--font-size-h4);
+    font-weight: 400;
     color: var(--color-text);
     padding: var(--spacing-xxs) var(--spacing-xs);
     border-radius: 3px;
@@ -79,11 +82,29 @@
   .fade-out {
     opacity: 0;
   }
+
+  .container {
+    max-width: 800px; /* Adjust as needed */
+    width: 90%; /* Responsive: scales down nicely on smaller screens */
+    margin: 0 auto; /* Centers horizontally */
+    padding: 2rem; /* Adjust padding to your taste */
+    box-sizing: border-box; /* Includes padding in total width */
+  }
+
+  .centered {
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+  }
+
+  .centered-text {
+    text-align: center;
+  }
   
   /* Headings */
   h1 {
     font-size: var(--font-size-h1);
-    margin-bottom: var(--spacing-sm);
+    margin-bottom: var(--spacing-lg);
   }
   h2 {
     font-size: var(--font-size-h2);
@@ -96,14 +117,27 @@
   p {
     margin-bottom: var(--spacing-sm);
   }
+
+  .promo-text {
+    font-size: 2.4rem; /* slightly smaller than your big headers, but still large */
+    margin-bottom: var(--spacing-lg);
+    line-height: 1.4;
+  }
   
-  /* Example figure styling */
   figure {
     margin: var(--spacing-sm) 0;
   }
   figcaption {
     font-size: 0.875rem;
     color: #666;
+  }
+
+  .fine-print {
+    font-size: var(--font-size-s);
+    font-weight: 100;
+    color: var(--color-text-secondary); 
+    display: block; 
+    margin-top: 0.25rem; 
   }
   
   /* -----------------------------------------------------
@@ -113,6 +147,8 @@
     background: var(--color-footer-bg);
     padding: var(--spacing-sm);
     text-align: center;
+    border-radius: 10px;
+    margin-bottom: var(--spacing-md);
   }
   #year {
     font-weight: 600;
@@ -164,9 +200,11 @@
    - "AL" in Figma Hand, rest in Lava Devanagari (or your chosen body font) */
 
 .mixed-header {
-    font-size: var(--font-size-h2); /* or bigger if you prefer */
-    margin-bottom: var(--spacing-md);
+    font-size: var(--font-size-h1); /* or bigger if you prefer */
+    font-weight: 100; 
+    margin-bottom: var(--spacing-xl);
     line-height: 1.2; /* to give it a bold, large look */
+    text-align: center;
   }
   
   .mixed-header .brand-al {
@@ -178,27 +216,22 @@
   .mixed-header .regular-font {
     /* Lava Devanagari or your normal font */
     font-family: 'Lava Devanagari', var(--font-primary), sans-serif;
+    font-weight: 500;
   }
   
   /* 2) PROMO BOX CONTAINER */
   
   .promo-box {
     position: relative;
-    background: var(--color-bg);
+    background: var(--color-raised-bg);
     border-radius: 1rem; /* Rounded corners */
-    padding: var(--spacing-md);
+    padding: var(--spacing-lg);
     margin-bottom: var(--spacing-lg);
-  
-    /* Optional shadow or border */
-    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-    /* or a subtle border: border: 1px solid #eee; */
+
+    overflow: hidden;
   }
   
-  .promo-text {
-    font-size: 1.25rem; /* slightly smaller than your big headers, but still large */
-    margin-bottom: var(--spacing-sm);
-    line-height: 1.4;
-  }
+  
   
   /* 3) BUTTON STYLING 
      - A general .btn class if you’re repeating this style across the site 
@@ -207,11 +240,13 @@
   .btn {
     display: inline-block;
     text-decoration: none;
-    padding: var(--spacing-xs) var(--spacing-sm);
+    padding: var(--spacing-sm) var(--spacing-md);
     border: none;
-    border-radius: 4px;
-    font-weight: 600;
+    border-radius: 10px;
+    font-weight: 200;
+    font-size: var(--button-text);
     cursor: pointer;
+
     /* Example color scheme: brand color background, white text. */
     background-color: var(--color-primary);
     color: #fff;

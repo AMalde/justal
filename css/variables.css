@@ -3,12 +3,14 @@
    ----------------------------------------------------- */
    :root {
     /* Colors */
-    --color-bg: #ffffff;
+    --color-bg: #F1EDE8;
+    --color-raised-bg: #E0D5D0; 
     --color-text: #333333;
-    --color-primary: #0066cc;
+    --color-text-secondary: #333333; 
+    --color-primary: #3C322D;
     --color-secondary: #ff6600;
-    --color-accent: #009900;
-    --color-footer-bg: #f4f4f4;
+    --color-accent: #8D1438;
+    --color-footer-bg: #E0D5D0;
   
     /* Typography (font families, sizes) */
     --font-primary: 'XCharter', Georgia, "Times New Roman", Times, serif;
@@ -18,10 +20,13 @@
   
     /* Base font sizes */
     --font-size-base: 16px; 
-    --font-size-h1: 2rem;
-    --font-size-h2: 1.75rem;
+    --font-size-s:  0.75rem; 
+    --font-size-h1: 4.5rem;
+    --font-size-h2: 4.5rem;
     --font-size-h3: 1.5rem;
     --font-size-h4: 1.25rem;
+
+    --button-text: 1.4rem;
   
     /* Spacing */
     --spacing-xxs: 0.25rem;
@@ -36,4 +41,30 @@
     --bp-tablet: 768px;
     --bp-desktop: 1024px;
     --bp-large-desktop: 1440px;
+
+    /*container*/
+    --container-width: 1000px;
   }
+
+  /* -----------------------------------------------------
+     2) Basic Resets / Global
+     ----------------------------------------------------- */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    font-size: var(--font-size-base);
+    background: var(--color-bg);
+    color: var(--color-text);
+  }
+
+  body {
+    margin: 0 auto;
+    padding: 0 var(--spacing-md);
+  }
+
+  /* -----------------------------------------------------
+  

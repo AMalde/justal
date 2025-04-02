@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Welcome to Al's site">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Home – Al's Website</title>
+  
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="/css/variables.css">
+  <link rel="stylesheet" href="/css/typography.css">
+  <link rel="stylesheet" href="/css/style.css">
+  
+  <!-- Main JS (defer ensures it runs after HTML is parsed) -->
+  <script src="/js/main.js" defer></script>
+</head>
+<body>
+  <a class="skip-to-content" href="#page-content">Skip to main content</a>
+  
+  <header role="banner">
+    <nav role="navigation" aria-label="Main Navigation">
+      <ul>
+        <li><a href="/en/index.html">Home</a></li>
+        <li><a href="/en/work.html">Work With Al</a></li>
+        <li><a href="/en/projects.html">Al's Projects</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <main id="page-content" role="main" tabindex="-1" aria-labelledby="page-title">
+
+
+    <section aria-labelledby="section-title">
+      <div class="container">
+        <h1 id="section-title" class="mixed-header">
+          <!-- The word AL is wrapped in a special span for the Figma Hand font -->
+          <span class="brand-al">AL</span> is just a <span class="regular-font">designer</span>
+        </h1>
+      
+        <div class="promo-box" role="region" aria-labelledby="promo-box-title">
+          <!-- Visually hidden heading if needed for screen readers, or keep it visible if you prefer -->
+          <h3 id="promo-box-title" class="sr-only">Al’s Offer</h3>
+      
+          <p class="promo-text">
+            <!-- The descriptive text for the container -->
+            AL helps people build products<br> in exchange for money.
+          </p>
+      
+          <a href="/en/work.html" class="btn work-with-al">
+            Work with Al
+          </a>
+      
+          <!-- The image that sits at bottom-right, partially hidden -->
+          <img 
+            class="promo-image" 
+            src="/images/als-face.png" 
+            alt="Background illustration partially peeking out"
+          />
+        </div>
+      </div>
+      </section>
+
+      <section aria-labelledby="part of koolektivet">
+        <div class="container">
+          <h2 id="section-title" class="mixed-header">
+            <!-- The word AL is wrapped in a special span for the Figma Hand font -->
+            <span class="brand-al">AL</span> is part of <span class="regular-font">Koolektivet</span>
+          </h2>
+          <p class="promo-text centered-text">A cool collective of normies. They´re all really good at making products in exchange for money</p>
+          <div class="centered">
+            <a href="/en/work.html" class="btn centered check-out-koolektivet">
+              Check out Kooletktivet
+            </a>
+            <small class="fine-print centered-text">Only if you’re interested in the best quality products available</small>
+
+          </div>
+          
+        </div>
+      </section>
+
+  </main>
+
+  <footer role="contentinfo">
+    <p>&copy; <span id="year"></span> Al's Website. All rights reserved.</p>
+  </footer>
+</body>
+</html>

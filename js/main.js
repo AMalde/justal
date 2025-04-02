@@ -1,181 +1,121 @@
 document.addEventListener('DOMContentLoaded', function () {
-    // Progressive enhancement: check if fetch is supported
-    if (typeof fetch === 'undefined') {
-      console.warn('Fetch API not supported. Falling back to normal navigation.');
-      return;
-    }
-  
-    // Grab the main container
     const mainContainer = document.getElementById('page-content');
-    if (!mainContainer) {
-      console.error('No element with id="page-content" found. Aborting JS enhancements.');
-      return;
-    }
-  
-    // Attach a click listener to the nav
     const navElement = document.querySelector('nav');
-    if (!navElement) {
-      console.warn('No <nav> element found. Aborting JS link interception.');
+  
+    if (!mainContainer || !navElement) {
+      console.error('Essential DOM elements missing.');
       return;
     }
   
-    navElement.addEventListener('click', function (event) {
-      const target = event.target;
-      if (target.tagName.toLowerCase() === 'a') {
+    // Attach listeners universally:
+    attachNavListeners(navElement, mainContainer);
+  
+    // Re-bind any JavaScript events on the loaded content.
+    initializePageScripts(); 
+  });
+  
+  function attachNavListeners(nav, container) {
+    nav.addEventListener('click', function (event) {
+      const target = event.target.closest('a');
+      if (target && target.tagName === 'A') {
         const url = target.getAttribute('href');
   
-        // Basic check for relative/internal links
         if (url && !url.startsWith('http') && !url.startsWith('#')) {
           event.preventDefault();
-          loadPage(url);
+          loadPage(url, container);
         }
       }
     });
+  }
   
-    async function loadPage(url) {
+  async function loadPage(url, container) {
+    container.classList.add('fade-out');
+  
+    container.addEventListener('transitionend', async function handler() {
+      container.removeEventListener('transitionend', handler);
+  
       try {
-        // Fade out content
-        mainContainer.classList.add('fade-out');
+        const response = await fetch(url);
+        if (!response.ok) throw new Error('Network response error');
+        const text = await response.text();
+        const doc = new DOMParser().parseFromString(text, 'text/html');
   
-        // Wait for transition to complete before fetching
-        mainContainer.addEventListener('transitionend', async function handler() {
-          mainContainer.removeEventListener('transitionend', handler);
+        // Replace content
+        const newContent = doc.getElementById('page-content');
+        if (newContent) {
+          container.innerHTML = newContent.innerHTML;
+        } else {
+          throw new Error('Content missing in fetched page');
+        }
   
-          let response;
-          try {
-            response = await fetch(url);
-          } catch (fetchErr) {
-            console.error('Fetch failed:', fetchErr);
-            fallbackToFullPageLoad(url);
-            return;
-          }
+        // Update page title
+        const newTitle = doc.querySelector('title');
+        if (newTitle) document.title = newTitle.innerText;
   
-          if (!response.ok) {
-            console.error(`HTTP error: ${response.status} for ${url}`);
-            fallbackToFullPageLoad(url);
-            return;
-          }
+        // Update history
+        window.history.pushState({ path: url }, '', url);
   
-          let text;
-          try {
-            text = await response.text();
-          } catch (readErr) {
-            console.error('Failed to read response text:', readErr);
-            fallbackToFullPageLoad(url);
-            return;
-          }
+        container.offsetHeight;
+        container.classList.remove('fade-out');
   
-          const parser = new DOMParser();
-          let doc;
-          try {
-            doc = parser.parseFromString(text, 'text/html');
-          } catch (parseErr) {
-            console.error('DOM parsing failed:', parseErr);
-            fallbackToFullPageLoad(url);
-            return;
-          }
+        // IMPORTANT: Re-initialize events after new content loads
+        initializePageScripts(); 
   
-          // Grab title & main content
-          const newTitleEl = doc.querySelector('title');
-          const newMainEl = doc.querySelector('#page-content');
-  
-          if (newTitleEl) {
-            document.title = newTitleEl.innerText.trim();
-          } else {
-            console.warn('No <title> found in the fetched page.');
-          }
-  
-          if (newMainEl) {
-            mainContainer.innerHTML = newMainEl.innerHTML;
-          } else {
-            console.error('#page-content not found in fetched page. Falling back.');
-            fallbackToFullPageLoad(url);
-            return;
-          }
-  
-          // Update browser history
-          window.history.pushState({ path: url }, '', url);
-  
-          // Force reflow then remove fade-out for fade-in
-          mainContainer.offsetHeight;
-          mainContainer.classList.remove('fade-out');
-        });
-      } catch (err) {
-        console.error('Unexpected error in loadPage:', err);
-        fallbackToFullPageLoad(url);
+      } catch (error) {
+        console.error('Error loading page:', error);
+        window.location.href = url;
       }
-    }
+    });
+  }
   
-    function fallbackToFullPageLoad(url) {
-      window.location.href = url;
-    }
+  // Handle back/forward navigation robustly
+  window.addEventListener('popstate', function (event) {
+    const url = event.state?.path || window.location.pathname;
+    fetchAndReplaceContent(url);
+  });
   
-    // Handle back/forward navigation
-    window.addEventListener('popstate', function (event) {
-      const url = event.state?.path || window.location.pathname;
-      fetchAndReplaceContent(url);
+  async function fetchAndReplaceContent(url) {
+    const container = document.getElementById('page-content');
+    container.classList.add('fade-out');
+  
+    container.addEventListener('transitionend', async function handler() {
+      container.removeEventListener('transitionend', handler);
+  
+      try {
+        const response = await fetch(url);
+        if (!response.ok) throw new Error('Network response error');
+        const text = await response.text();
+        const doc = new DOMParser().parseFromString(text, 'text/html');
+  
+        const newContent = doc.getElementById('page-content');
+        if (newContent) container.innerHTML = newContent.innerHTML;
+  
+        const newTitle = doc.querySelector('title');
+        if (newTitle) document.title = newTitle.innerText;
+  
+        container.offsetHeight;
+        container.classList.remove('fade-out');
+  
+        // Re-initialize events after content swap
+        initializePageScripts();
+  
+      } catch (error) {
+        console.error('Error during popstate:', error);
+        window.location.href = url;
+      }
+    });
+  }
+  
+  // This function runs every time the content is loaded or swapped
+  function initializePageScripts() {
+    // Re-bind all event listeners needed on page elements
+    // Example: buttons, dynamic elements, etc.
+    const buttons = document.querySelectorAll('.btn');
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        console.log('Button clicked:', button.textContent);
+      });
     });
   
-    async function fetchAndReplaceContent(url) {
-      try {
-        mainContainer.classList.add('fade-out');
-        mainContainer.addEventListener('transitionend', async function handler() {
-          mainContainer.removeEventListener('transitionend', handler);
-  
-          let response;
-          try {
-            response = await fetch(url);
-          } catch (fetchErr) {
-            console.error('Fetch failed during popstate:', fetchErr);
-            fallbackToFullPageLoad(url);
-            return;
-          }
-  
-          if (!response.ok) {
-            console.error(`HTTP error: ${response.status} for ${url} during popstate.`);
-            fallbackToFullPageLoad(url);
-            return;
-          }
-  
-          let text;
-          try {
-            text = await response.text();
-          } catch (readErr) {
-            console.error('Failed to read response text during popstate:', readErr);
-            fallbackToFullPageLoad(url);
-            return;
-          }
-  
-          const parser = new DOMParser();
-          let doc;
-          try {
-            doc = parser.parseFromString(text, 'text/html');
-          } catch (parseErr) {
-            console.error('DOM parsing failed during popstate:', parseErr);
-            fallbackToFullPageLoad(url);
-            return;
-          }
-  
-          const newTitleEl = doc.querySelector('title');
-          const newMainEl = doc.querySelector('#page-content');
-  
-          if (newTitleEl) {
-            document.title = newTitleEl.innerText.trim();
-          }
-          if (newMainEl) {
-            mainContainer.innerHTML = newMainEl.innerHTML;
-          } else {
-            console.error('#page-content missing in fetched page during popstate. Falling back.');
-            fallbackToFullPageLoad(url);
-            return;
-          }
-  
-          mainContainer.offsetHeight;
-          mainContainer.classList.remove('fade-out');
-        });
-      } catch (err) {
-        console.error('Unexpected error in fetchAndReplaceContent:', err);
-        fallbackToFullPageLoad(url);
-      }
-    }
-  });
+    // Add additional JS event bindings here as needed
+  }
