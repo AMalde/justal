@@ -76,17 +76,35 @@
   nav a {
     text-decoration: none;
     font-size: var(--font-size-h4);
-    font-weight: 400;
+    font-weight: 600;
     color: var(--color-text);
-    padding: var(--spacing-xs) var(--spacing-sm);
-    border-radius: 10px;
+    padding: var(--spacing-xs) var(--spacing-xs);
+
+
+    transform: translateY(0); /* Initial position */
+    transition: 
+    transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), 
+    box-shadow 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), 
+    background-color 0.2s ease-out;
+  }
+
+  .focused-link { 
+
+    -webkit-box-shadow: 0px 2px 0px 0px var(--color-accent);
+    -moz-box-shadow: 0px 2px 0px 0px var(--color-accent);
+    box-shadow: 0px 2px 0px 0px var(--color-accent);
+
+    transform: translateY(0px);
   }
 
 
   nav a:hover,
   nav a:focus {
-    background: var(--color-accent);
-    color: #fff;
+    -webkit-box-shadow: 0px 2px 0px 0px var(--color-accent);
+    -moz-box-shadow: 0px 2px 0px 0px var(--color-accent);
+    box-shadow: 0px 2px 0px 0px var(--color-accent);
+
+    transform: translateY(0px);
   }
   
   /* -----------------------------------------------------
@@ -303,7 +321,7 @@
      - A general .btn class if you're repeating this style across the site 
      - Then .work-with-al if you want further variations. */
   
-  .btn {
+  .secondary-button {
     display: inline-block;
     text-decoration: none;
     padding: var(--spacing-sm) var(--spacing-md);
@@ -326,6 +344,34 @@
     transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), 
     box-shadow 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), 
     background-color 0.2s ease-out;
+  }
+  .btn {
+    display: inline-block;
+    text-decoration: none;
+    padding: var(--spacing-sm) var(--spacing-md);
+    border: none;
+    border-radius: 10px;
+    font-weight: 200;
+    font-size: var(--button-text);
+    cursor: pointer;
+
+    /* Example color scheme: brand color background, white text. */
+    background-color: var(--color-primary);
+    color: #fff;
+
+    -webkit-box-shadow: 0px 0px 0px 0px #3C322D;
+    -moz-box-shadow: 0px 0px 0px 0px #3C322D;
+    box-shadow: 0px 0px 0px 0px #3C322D;
+
+    background-color: var(--color-accent);
+
+    -webkit-box-shadow: 0px 4px 0px 0px #3C322D;
+    -moz-box-shadow: 0px 4px 0px 0px #3C322D;
+    box-shadow: 0px 4px 0px 0px #3C322D;
+
+    transform: translateY(-4px);
+
+    
   }
   
   .btn:hover,
@@ -361,6 +407,19 @@
     z-index: 0;     /* behind text if overlapping */
   }
 
+  @media (max-width: 480px) {
+
+    .promo-image {
+      position: absolute;
+      bottom: -1rem;  /* move the image partially out of the container */
+      right: -1rem;   /* likewise for the right side */
+      width: 100px;   /* adjust as needed */
+      height: auto;
+      pointer-events: none; /* it's decorative, so no clicks needed */
+      z-index: 0;     /* behind text if overlapping */
+    }
+  }
+
   .service-image {
     width: 10rem;
   }
@@ -373,6 +432,18 @@
     bottom: -10rem; 
     width: 20rem; 
 
+  }
+
+  @media (max-width: 480px) {
+    .footer-image { 
+      -webkit-transform: scaleX(-1);
+      transform: scaleX(-1);
+      position: relative; 
+      left: -5rem; 
+      bottom: -6rem; 
+      width: 20rem; 
+  
+    }
   }
   
   /* 5) Screen Reader Only class (optional) 
@@ -400,27 +471,10 @@
   }
 
 @media (max-width: 768px) {
-  :root {
-    --font-size-xl: 2.25rem;
-    --font-size-lg: 1.5rem;
-    --font-size-md: 1rem;
-    --font-size-sm: 0.8rem;
-  }
-
   .container, .section {
     padding-left: var(--spacing-sm);
     padding-right: var(--spacing-sm);
     margin: 0 auto;
-  }
-
-  h1 {
-    font-size: var(--font-size-xl);
-  }
-  h2 {
-    font-size: var(--font-size-lg);
-  }
-  p, small {
-    font-size: var(--font-size-md);
   }
 
   .flex-container {
@@ -445,27 +499,12 @@
 }
 
 @media (max-width: 480px) {
-  :root {
-    --font-size-xl: 1.75rem;
-    --font-size-lg: 1.25rem;
-    --font-size-md: 0.95rem;
-    --font-size-sm: 0.75rem;
-  }
 
   .container, .section {
     padding: var(--spacing-xs);
     margin: 0 auto;
   }
 
-  h1 {
-    font-size: var(--font-size-xl);
-  }
-  h2 {
-    font-size: var(--font-size-lg);
-  }
-  p, small {
-    font-size: var(--font-size-md);
-  }
 
   .flex-container {
     flex-direction: column;
@@ -486,4 +525,14 @@
     overflow-wrap: break-word;
     box-sizing: border-box;
   }
+}
+
+
+/*sections */
+
+.al-is-a-designer {
+  min-height: 80vh; 
+}
+.part-of-koolas {
+  padding-bottom: 8rem;
 }

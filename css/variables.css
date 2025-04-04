@@ -67,20 +67,39 @@
   /* Mobile: max width 480px */
   @media (max-width: 480px) {
     :root {
-      --font-size-xl: 1.75rem;
-      --font-size-lg: 1.25rem;
-      --font-size-md: 0.95rem;
-      --font-size-sm: 0.75rem;
+      --font-size-s:  0.75rem; 
+      --font-size-h1: 2.5rem;
+      --font-size-h2: 2.5rem;
+      --font-size-h3: 1.2rem;
+      --font-size-h4: 1.25rem;
+      --button-text: 1.3rem;
+      --promo-text: 1.5rem;
+    }
+
+    .footer-image { 
+      -webkit-transform: scaleX(-1);
+      transform: scaleX(-1);
+      position: relative; 
+      left: -3rem; 
+      bottom: -10rem; 
+      width: 5rem; 
+  
     }
   }
   
   /* Very small phones: max width 360px */
   @media (max-width: 360px) {
     :root {
-      --font-size-xl: 1.5rem;
-      --font-size-lg: 1.125rem;
-      --font-size-md: 0.875rem;
-      --font-size-sm: 0.7rem;
+      --font-size-s:  0.75rem; 
+      --font-size-h1: 2rem;
+      --font-size-h2: 2rem;
+      --font-size-h3: 1.2rem;
+      --font-size-h4: 1.25rem;
+      --button-text: 1.3rem;
+      --promo-text: 1.5rem;
+
+      --button-text: 1rem;
+      --promo-text: 1.5rem;
     }
   }
 
