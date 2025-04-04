@@ -8,6 +8,7 @@
   <title>Home – Al's Website</title>
   
   <!-- Main CSS -->
+  <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
   <link rel="stylesheet" href="/css/variables.css">
   <link rel="stylesheet" href="/css/typography.css">
   <link rel="stylesheet" href="/css/style.css">
@@ -21,21 +22,28 @@
   <header role="banner">
     <nav role="navigation" aria-label="Main Navigation">
       <ul>
-        <li><a href="/en/index.html">Home</a></li>
+        <li><a href="/en/index.html">Who's Al</a></li>
         <li><a href="/en/work.html">Work With Al</a></li>
-        <li><a href="/en/projects.html">Al's Projects</a></li>
+        <li><a href="/en/products.html">Al's Products</a></li>
       </ul>
     </nav>
   </header>
   
   <main id="page-content" role="main" tabindex="-1" aria-labelledby="page-title">
+    
+    <!-- MVP stamp -->
+    <img 
+      class="mvp-image" 
+      src="/images/mvp.png" 
+      alt="Image symbolizing that this web page is a minimum viable page"
+    />
 
-
+    
     <section aria-labelledby="section-title">
       <div class="container">
         <h1 id="section-title" class="mixed-header">
           <!-- The word AL is wrapped in a special span for the Figma Hand font -->
-          <span class="brand-al">AL</span> is just a <span class="regular-font">designer</span>
+          <span class="brand-al">al</span> is a <span class="regular-font">designer</span>
         </h1>
       
         <div class="promo-box" role="region" aria-labelledby="promo-box-title">
@@ -44,12 +52,15 @@
       
           <p class="promo-text">
             <!-- The descriptive text for the container -->
-            AL helps people build products<br> in exchange for money.
+            Al builds <b>products</b> for people in exchange for money.
           </p>
-      
-          <a href="/en/work.html" class="btn work-with-al">
-            Work with Al
-          </a>
+          
+          <div class="internal-link">
+            <a href="/en/work.html" class="btn work-with-al">
+              Work with Al
+            </a>
+          </div>
+          
       
           <!-- The image that sits at bottom-right, partially hidden -->
           <img 
@@ -65,24 +76,87 @@
         <div class="container">
           <h2 id="section-title" class="mixed-header">
             <!-- The word AL is wrapped in a special span for the Figma Hand font -->
-            <span class="brand-al">AL</span> is part of <span class="regular-font">Koolektivet</span>
+            <span class="brand-al">al</span> is part of <span class="regular-font">Koolas</span>
           </h2>
-          <p class="promo-text centered-text">A cool collective of normies. They´re all really good at making products in exchange for money</p>
+          <p class="promo-text centered-text">A <b>cool collective</b> of creators who make products in exchange for money</p>
           <div class="centered">
-            <a href="/en/work.html" class="btn centered check-out-koolektivet">
-              Check out Kooletktivet
+            <a href="/en/work.html" class="btn check-out-koolektivet">
+              Check out koolas
             </a>
-            <small class="fine-print centered-text">Only if you’re interested in the best quality products available</small>
+            <small class="fine-print centered-text" style="margin-top: 1rem;">Only if you’re interested in  the best <br> quality products available</small>
 
           </div>
           
         </div>
       </section>
 
-  </main>
+      <section class="al-has-a-product-line" aria-labelledby="Al has a product line">
+        <div class="container">
 
-  <footer role="contentinfo">
-    <p>&copy; <span id="year"></span> Al's Website. All rights reserved.</p>
-  </footer>
+          <h2 id="section-title" class="mixed-header">
+            <!-- The word AL is wrapped in a special span for the Figma Hand font -->
+            <span class="brand-al">al</span> has a <span class="regular-font">Product line</span>
+          </h2>
+          <p class="promo-text centered-text">
+            A fine selection of <b>hand coded</b> software for desktop and phone. 
+          </p>
+
+
+          <div class="flex-container">
+            <div class="promo-box-small flex-container" role="region" aria-labelledby="promo-box-title" style="background-color:#DBCEBD;">
+              <div class="box">
+                 <!-- Visually hidden heading if needed for screen readers, or keep it visible if you prefer -->
+                <h3 id="promo-box-title" class="sr-only">Al’s Offer</h3>
+          
+                <h3>
+                  Alakazam
+                </h3>
+                <p class="">
+                  <!-- The descriptive text for the container -->
+                  I’m making Alakazam because I remember how magical computers felt the first time I used one.  I want to build something by hand that brings back that awe in human-computer interaction.
+                </p>
+                <a href="/en/products.html" class="btn check-out-koolektivet" style="margin-top: 1rem;">
+                  Learn about Alakazam
+                </a>
+              </div>
+              <div class="box centered-text">
+                <img 
+                  class="product-image" 
+                  src="/images/alakazam.png" 
+                  alt="Background illustration partially peeking out"
+                />
+              </div> 
+            </div>
+          </div>
+          <div class="centered">
+            
+          </div>
+        </div>
+
+  
+
+</section>
+
+</main>
+
+<footer role="contentinfo">
+  <h2 id="section-title" class="mixed-header" style="margin-bottom: 0">
+    <!-- The word AL is wrapped in a special span for the Figma Hand font -->
+    <span class="brand-al">al</span> has a footer in his <span class="regular-font"> AS</span>
+  </h2>
+  <p class="promo-text centered-text">You can contact him on</p>
+  <a href="mailto:al@justal.no" class="btn check-out-koolektivet">
+    al@justal.no
+  </a>
+  <p>&copy; <span id="year"></span> Alas. All rights reserved.</p>
+
+  <!-- footer image -->
+  <img 
+    class="footer-image" 
+    src="/images/als-face.png" 
+    alt="Image symbolizing that this web page is a minimum viable page"
+  />
+</footer>
+
 </body>
 </html>

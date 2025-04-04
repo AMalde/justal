@@ -1,39 +1,254 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
   <meta charset="UTF-8">
   <meta name="description" content="Work with Al">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
   <title>Work with Al – Al's Website</title>
   
-  <!-- Main CSS -->
+  <!-- CSS -->
+  <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
   <link rel="stylesheet" href="/css/variables.css">
   <link rel="stylesheet" href="/css/typography.css">
   <link rel="stylesheet" href="/css/style.css">
 
+  <!-- Javascript -->
   <script src="/js/main.js" defer></script>
+
 </head>
 <body>
+
   <a class="skip-to-content" href="#main-content">Skip to main content</a>
+
   <header role="banner">
     <nav role="navigation" aria-label="Main Navigation">
       <ul>
-        <li><a href="/en/index.html">Home</a></li>
+        <li><a href="/en/index.html">Who's Al</a></li>
         <li><a href="/en/work.html">Work With Al</a></li>
-        <li><a href="/en/projects.html">Al's Projects</a></li>
+        <li><a href="/en/products.html">Al's Products</a></li>
       </ul>
     </nav>
   </header>
   
-  <main id="page-content" role="main" tabindex="-1" aria-labelledby="page-title">
-    <div class="container">
-      <h1 id="page-title">Work with Al</h1>
-      <p>all of Al's work goes here...</p>
+  <main id="page-content" role="main" tabindex="-1" aria-labelledby="work with al">
+    <section aria-labelledby="section-title">
+      <div class="container">
+        
+        <h1 id="section-title" class="mixed-header">
+          Work with <span class="brand-al">al</span> 
+        </h1>
+
+        <div class="flex-container">
+          
+          <div class="service-container">
+            <img 
+              class="service-image" 
+              src="/images/reseraching-an-idea.png" 
+              alt="Illustration showing invetigating and connecting the dots"
+            />
+            <h3>
+              Product research
+            </h3>
+            <p>
+              Al learns about your customers and your problem, and make sure you´re making the right thing.
+            </p>
+          
+          </div>
+
+          <div class="service-container">
+            <img 
+              class="service-image" 
+              src="/images/sketching-an-idea.png" 
+              alt="Illustration showing invetigating and connecting the dots"
+            />
+            <h3>
+              Sketching
+            </h3>
+            <p>
+              Al draws and sketches and codes, glues together a thing that solves the problem -  so we can test it.           </p>
+          </div>
+
+        </div>
+
+        <div class="flex-container">
+          <div class="service-container">
+            <img 
+              class="service-image" 
+              src="/images/testing-an-idea.png" 
+              alt="Illustration showing invetigating and connecting the dots"
+            />
+            <h3>
+              Testing
+            </h3>
+            <p>
+              Al tests our work with users, questions and prods, and evaluates what we’ve done right and wrong. 
+            </p>
+          
+          </div>
+
+          <div class="service-container">
+            <img 
+              class="service-image" 
+              src="/images/creating-a-working-product.png" 
+              alt="Illustration showing invetigating and connecting the dots"
+            />
+            <h3>
+              Version One
+            </h3>
+            <p>
+              Al designs and codes a robust first version of your product that will be used by customers, to gather feedback for v2
+          </div>
+        </div>
+
+        <p class="promo-text centered-text space-above">If you need help with any one or all of the above, its <b>time to call al</b></p>
+            <div class="centered">
+              <a href="mailto:al@justal.no" class="btn contact-al">
+                Contact Al at al@justal.no
+              </a>
+
+              <a href="mailto:al@justal.no" class="btn contact-al">
+                Contact Al at al@justal.no
+              </a>
+
+              <!-- Google Calendar Appointment Scheduling begin -->
+              
+              
+              <script>
+                (function() {
+                  var target = document.currentScript;
+                  window.addEventListener('load', function() {
+                    calendar.schedulingButton.load({
+                      url: 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ3lTOHG0fDfBi6EQgGTVs7Aupbm66snI3xCVaV8SSjX7yicDAMm3EY3x6GC4s7EP6rHi0mojkbV?gv=true',
+                      color: '#039BE5',
+                      label: 'Avtal et møte',
+                      target,
+                    });
+                  });
+                })();
+              </script>
+              <!-- end Google Calendar Appointment Scheduling -->
+
+              
+          </div>
+      </section>
+      <section aria-labelledby="als previous cooperations">
+        <div class="container">
+
+          <h2 id="section-title" class="mixed-header">
+            <!-- The word AL is wrapped in a special span for the Figma Hand font -->
+            <span class="brand-al">al</span> has worked before
+          </h2>
+          <p class="promo-text centered-text">
+            If you need help with any one or all of the above, its time to call al
+          </p>
+
+
+          <div class="flex-container">
+            <div class="promo-box-small" role="region" aria-labelledby="promo-box-title">
+              <!-- Visually hidden heading if needed for screen readers, or keep it visible if you prefer -->
+              <h3 id="promo-box-title" class="sr-only">Al’s Offer</h3>
+          
+              <h4>
+                Equinor
+              </h4>
+              <p class="">
+                <!-- The descriptive text for the container -->
+                A voice controled ai teacher that helps you study, read, and listen to books.               
+              </p>
+          
+              <!-- The image that sits at bottom-right, partially hidden -->
+                
+            </div>
+  
+            <div class="promo-box-small" role="region" aria-labelledby="promo-box-title">
+              <!-- Visually hidden heading if needed for screen readers, or keep it visible if you prefer -->
+              <h3 id="promo-box-title" class="sr-only">Al’s Offer</h3>
+          
+              <h4>
+                Jæren Olje
+              </h4>
+              <p class="">
+                <!-- The descriptive text for the container -->
+                An experiment in expressive human computer interaction.           
+              </p>
+          
+            </div>
+
+            </div>
+
+            <div class="flex-container">
+              <div class="promo-box-small" role="region" aria-labelledby="promo-box-title">
+                <!-- Visually hidden heading if needed for screen readers, or keep it visible if you prefer -->
+                <h3 id="promo-box-title" class="sr-only">Al’s Offer</h3>
+            
+                <h4>
+                  Amina Charging
+                </h4>
+                <p class="">
+                  <!-- The descriptive text for the container -->
+                  A voice controled ai teacher that helps you study, read, and listen to books.               
+                </p>
+            
+                <!-- The image that sits at bottom-right, partially hidden -->
+                  
+              </div>
+    
+              <div class="promo-box-small" role="region" aria-labelledby="promo-box-title">
+                <!-- Visually hidden heading if needed for screen readers, or keep it visible if you prefer -->
+                <h3 id="promo-box-title" class="sr-only">Al’s Offer</h3>
+            
+                <h4>
+                  CurlyBrackets
+                </h4>
+                <p class="">
+                  <!-- The descriptive text for the container -->
+                  An experiment in expressive human computer interaction.           
+                </p>
+            
+              </div>
+          </div>
+          
+          
+          <p class="promo-text centered-text">
+            If you need help with any one or all of the above, its time to call Al
+          </p>
+          <div class="centered">
+            <a href="mailto:al@justal.no" class="btn contact-al">
+              Contact Al at al@justal.no
+            </a>
+            
+
+          </div>
+          
+        </div>
+      </section>
+
+
     </div>
   </main>
     
   <footer role="contentinfo">
-    <p>&copy; <span id="year"></span> Al's Website. All rights reserved.</p>
+    <h2 id="section-title" class="mixed-header" style="margin-bottom: 0">
+      <!-- The word AL is wrapped in a special span for the Figma Hand font -->
+      <span class="brand-al">al</span> has a footer in his <span class="regular-font"> AS</span>
+    </h2>
+    <p class="promo-text centered-text">You can contact him on</p>
+    <a href="mailto:al@justal.no" class="btn check-out-koolektivet">
+      al@justal.no
+    </a>
+    <p>&copy; <span id="year"></span> Alas. All rights reserved.</p>
+  
+    <!-- footer image -->
+    <img 
+      class="footer-image" 
+      src="/images/als-face.png" 
+      alt="Image symbolizing that this web page is a minimum viable page"
+    />
   </footer>
+
+
+  <script src="https://calendar.google.com/calendar/scheduling-button-script.js" async></script>
 </body>
 </html>

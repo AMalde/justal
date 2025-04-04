@@ -1,6 +1,10 @@
+
+
+/*
 document.addEventListener('DOMContentLoaded', function () {
     const mainContainer = document.getElementById('page-content');
     const navElement = document.querySelector('nav');
+    const pageLinks = document.querySelector('.internal-link');
   
     if (!mainContainer || !navElement) {
       console.error('Essential DOM elements missing.');
@@ -9,6 +13,7 @@ document.addEventListener('DOMContentLoaded', function () {
   
     // Attach listeners universally:
     attachNavListeners(navElement, mainContainer);
+    attachNavListeners(pageLinks, mainContainer);
   
     // Re-bind any JavaScript events on the loaded content.
     initializePageScripts(); 
@@ -119,3 +124,5 @@ document.addEventListener('DOMContentLoaded', function () {
   
     // Add additional JS event bindings here as needed
   }
+
+  */

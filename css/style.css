@@ -10,6 +10,13 @@
     padding: 0;
     box-sizing: border-box;
   }
+
+  .mvp-image {
+    position: absolute; 
+    top: 3rem; 
+    right: 3rem; 
+    width: 8rem;
+  }
   
   html {
     font-size: var(--font-size-base);
@@ -21,7 +28,18 @@
     font-family: var(--font-primary);
     line-height: 1.5;
   }
+
+  section { 
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
   
+  section:last-of-type {
+    /* Styles here apply only to the last <section> on the page */
+    margin-bottom: 0;
+
+  }
+
   /* A class for our skip link */
   .skip-to-content {
     position: absolute;
@@ -41,7 +59,7 @@
      3) Header & Nav
      ----------------------------------------------------- */
   header {
-    padding: var(--spacing-lg);
+    padding-top: var(--spacing-xl);
     background: var(--color-bg);
     border-bottom: 1px solid #eee;
   }
@@ -60,10 +78,11 @@
     font-size: var(--font-size-h4);
     font-weight: 400;
     color: var(--color-text);
-    padding: var(--spacing-xxs) var(--spacing-xs);
-    border-radius: 3px;
+    padding: var(--spacing-xs) var(--spacing-sm);
+    border-radius: 10px;
   }
-  
+
+
   nav a:hover,
   nav a:focus {
     background: var(--color-accent);
@@ -74,8 +93,9 @@
      4) Main Content
      ----------------------------------------------------- */
   main {
-    padding: var(--spacing-md);
+    /*padding: var(--spacing-md);*/
     transition: opacity 0.3s ease-out; /* for fade animations */
+    overflow: hidden;
   }
   
   /* Fade-out class for transitions */
@@ -87,7 +107,8 @@
     max-width: 800px; /* Adjust as needed */
     width: 90%; /* Responsive: scales down nicely on smaller screens */
     margin: 0 auto; /* Centers horizontally */
-    padding: 2rem; /* Adjust padding to your taste */
+    padding-left: 2rem; /* Adjust padding to your taste */
+    padding-right: 2rem; /* Adjust padding to your taste */
     box-sizing: border-box; /* Includes padding in total width */
   }
 
@@ -119,8 +140,8 @@
   }
 
   .promo-text {
-    font-size: 2.4rem; /* slightly smaller than your big headers, but still large */
-    margin-bottom: var(--spacing-lg);
+    font-size: var(--promo-text); /* slightly smaller than your big headers, but still large */
+    margin-bottom: var(--spacing-xl);
     line-height: 1.4;
   }
   
@@ -144,11 +165,12 @@
      5) Footer
      ----------------------------------------------------- */
   footer {
-    background: var(--color-footer-bg);
-    padding: var(--spacing-sm);
+    position:relative;
+    overflow: hidden;
+    background: var(--color-bg-tertiary);
+    padding: var(--spacing-xl);
     text-align: center;
-    border-radius: 10px;
-    margin-bottom: var(--spacing-md);
+    border-radius: 10px 10px 0 0 ;
   }
   #year {
     font-weight: 600;
@@ -202,15 +224,16 @@
 .mixed-header {
     font-size: var(--font-size-h1); /* or bigger if you prefer */
     font-weight: 100; 
-    margin-bottom: var(--spacing-xl);
+    margin-bottom: var(--spacing-md);
     line-height: 1.2; /* to give it a bold, large look */
     text-align: center;
   }
   
   .mixed-header .brand-al {
     /* Figma Hand for "AL" */
-    font-family: 'Figma Hand', cursive; /* Replace with your actual @font-face or external link */
+    font-family: 'JustAnotherHand', cursive; /* Replace with your actual @font-face or external link */
     font-weight: 700; /* If needed. Adjust to your preference. */
+    font-size: calc(var(--font-size-h1) * 1.7);
   }
   
   .mixed-header .regular-font {
@@ -226,15 +249,58 @@
     background: var(--color-raised-bg);
     border-radius: 1rem; /* Rounded corners */
     padding: var(--spacing-lg);
+
+
+    overflow: hidden;
+  }
+
+  .promo-box-small {
+    background: var(--color-raised-bg);
+    border-radius: 1rem; /* Rounded corners */
+    padding: var(--spacing-lg);
     margin-bottom: var(--spacing-lg);
 
     overflow: hidden;
+
+    box-sizing: border-box;
+
+    flex: 1;
+
+    
+  }
+
+  .box {
+    flex:1; 
+  }
+
+  .flex-container > * {
+  }
+
+  .flex-container {  
+    width: 100%;
+
+    display:flex; 
+    gap: 1rem;
+  }
+
+  .service-container {
+    text-align: center;
+    flex: 1;
+    padding: var(--spacing-md);
+  }
+
+  /*
+    Spacing between sections
+  */
+
+  .space-above {
+    margin-top: var(--spacing-lg);
   }
   
   
   
   /* 3) BUTTON STYLING 
-     - A general .btn class if you’re repeating this style across the site 
+     - A general .btn class if you're repeating this style across the site 
      - Then .work-with-al if you want further variations. */
   
   .btn {
@@ -250,11 +316,28 @@
     /* Example color scheme: brand color background, white text. */
     background-color: var(--color-primary);
     color: #fff;
+
+    -webkit-box-shadow: 0px 0px 0px 0px #3C322D;
+    -moz-box-shadow: 0px 0px 0px 0px #3C322D;
+    box-shadow: 0px 0px 0px 0px #3C322D;
+
+    transform: translateY(0); /* Initial position */
+    transition: 
+    transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), 
+    box-shadow 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), 
+    background-color 0.2s ease-out;
   }
   
   .btn:hover,
   .btn:focus {
-    background-color: var(--color-secondary);
+    background-color: var(--color-accent);
+
+    -webkit-box-shadow: 0px 4px 0px 0px #3C322D;
+    -moz-box-shadow: 0px 4px 0px 0px #3C322D;
+    box-shadow: 0px 4px 0px 0px #3C322D;
+
+    transform: translateY(-4px); /* Moves button slightly upwards */
+
   }
   
   /* .work-with-al specifically if you want different color/size: */
@@ -274,8 +357,22 @@
     right: -1rem;   /* likewise for the right side */
     width: 150px;   /* adjust as needed */
     height: auto;
-    pointer-events: none; /* it’s decorative, so no clicks needed */
+    pointer-events: none; /* it's decorative, so no clicks needed */
     z-index: 0;     /* behind text if overlapping */
+  }
+
+  .service-image {
+    width: 10rem;
+  }
+
+  .footer-image { 
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    position: absolute; 
+    left: -3rem; 
+    bottom: -10rem; 
+    width: 20rem; 
+
   }
   
   /* 5) Screen Reader Only class (optional) 
@@ -291,3 +388,102 @@
     white-space: nowrap; 
     border: 0;
   }
+
+
+
+  /*
+  SECTIONS
+  */
+
+  .al-has-a-product-line {
+    background-color:var(--color-bg-secondary); 
+  }
+
+@media (max-width: 768px) {
+  :root {
+    --font-size-xl: 2.25rem;
+    --font-size-lg: 1.5rem;
+    --font-size-md: 1rem;
+    --font-size-sm: 0.8rem;
+  }
+
+  .container, .section {
+    padding-left: var(--spacing-sm);
+    padding-right: var(--spacing-sm);
+    margin: 0 auto;
+  }
+
+  h1 {
+    font-size: var(--font-size-xl);
+  }
+  h2 {
+    font-size: var(--font-size-lg);
+  }
+  p, small {
+    font-size: var(--font-size-md);
+  }
+
+  .flex-container {
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+
+  .btn {
+    min-height: 44px;
+    padding: var(--spacing-xs) var(--spacing-sm);
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  * {
+    overflow-wrap: break-word;
+    box-sizing: border-box;
+  }
+}
+
+@media (max-width: 480px) {
+  :root {
+    --font-size-xl: 1.75rem;
+    --font-size-lg: 1.25rem;
+    --font-size-md: 0.95rem;
+    --font-size-sm: 0.75rem;
+  }
+
+  .container, .section {
+    padding: var(--spacing-xs);
+    margin: 0 auto;
+  }
+
+  h1 {
+    font-size: var(--font-size-xl);
+  }
+  h2 {
+    font-size: var(--font-size-lg);
+  }
+  p, small {
+    font-size: var(--font-size-md);
+  }
+
+  .flex-container {
+    flex-direction: column;
+    gap: var(--spacing-xs);
+  }
+
+  .btn {
+    min-height: 44px;
+    padding: var(--spacing-xs) var(--spacing-sm);
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  * {
+    overflow-wrap: break-word;
+    box-sizing: border-box;
+  }
+}

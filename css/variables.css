@@ -4,9 +4,12 @@
    :root {
     /* Colors */
     --color-bg: #F1EDE8;
+    --color-bg-secondary: #E7DED3; 
+    --color-bg-tertiary: #D5B8AA;
+    
     --color-raised-bg: #E0D5D0; 
-    --color-text: #333333;
-    --color-text-secondary: #333333; 
+    --color-text: #3C322D;
+    --color-text-secondary: #3C322D; 
     --color-primary: #3C322D;
     --color-secondary: #ff6600;
     --color-accent: #8D1438;
@@ -25,8 +28,8 @@
     --font-size-h2: 4.5rem;
     --font-size-h3: 1.5rem;
     --font-size-h4: 1.25rem;
-
-    --button-text: 1.4rem;
+    --promo-text: 2.3rem;
+    --button-text: 1.7rem;
   
     /* Spacing */
     --spacing-xxs: 0.25rem;
@@ -35,6 +38,7 @@
     --spacing-md: 1.5rem;
     --spacing-lg: 2rem;
     --spacing-xl: 3rem;
+    --spacing-xxl: 5rem;
   
     /* Breakpoints */
     --bp-mobile: 480px;
@@ -44,6 +48,40 @@
 
     /*container*/
     --container-width: 1000px;
+  }
+
+  @media (max-width: 768px) {
+    :root {
+
+      --font-size-s:  0.75rem; 
+      --font-size-h1: 3.5rem;
+      --font-size-h2: 3.5rem;
+      --font-size-h3: 1rem;
+      --font-size-h4: 1.25rem;
+      --button-text: 1.3rem;
+      --promo-text: 2rem;
+
+    }
+  }
+  
+  /* Mobile: max width 480px */
+  @media (max-width: 480px) {
+    :root {
+      --font-size-xl: 1.75rem;
+      --font-size-lg: 1.25rem;
+      --font-size-md: 0.95rem;
+      --font-size-sm: 0.75rem;
+    }
+  }
+  
+  /* Very small phones: max width 360px */
+  @media (max-width: 360px) {
+    :root {
+      --font-size-xl: 1.5rem;
+      --font-size-lg: 1.125rem;
+      --font-size-md: 0.875rem;
+      --font-size-sm: 0.7rem;
+    }
   }
 
   /* -----------------------------------------------------
@@ -63,7 +101,7 @@
 
   body {
     margin: 0 auto;
-    padding: 0 var(--spacing-md);
+
   }
 
   /* -----------------------------------------------------
