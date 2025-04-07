@@ -55,8 +55,8 @@
     font-family: 'JustAnotherHand';
     src: url('../fonts/justanotherhand-regular-webfont.woff2') format('woff2'),
          url('../fonts/justanotherhand-regular-webfont.woff') format('woff');
-    font-weight: bold;
-    font-style: oblique;
+    font-weight: normal;
+    font-style: normal;
 }
 
 /* -----------------------------------------------------

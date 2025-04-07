@@ -250,7 +250,6 @@
   .mixed-header .brand-al {
     /* Figma Hand for "AL" */
     font-family: 'JustAnotherHand', cursive; /* Replace with your actual @font-face or external link */
-    font-weight: 700; /* If needed. Adjust to your preference. */
     font-size: calc(var(--font-size-h1) * 1.7);
   }
   
