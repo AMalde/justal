@@ -5,9 +5,11 @@
     /* Colors */
     --color-bg: #F1EDE8;
     --color-bg-secondary: #E7DED3; 
-    --color-bg-tertiary: #D5B8AA;
-    
     --color-raised-bg: #E0D5D0; 
+
+    --color-bg-tertiary: #D5B8AA;
+    --color-raised-bg-secondary: #E7DED3;
+    
     --color-text: #3C322D;
     --color-text-secondary: #3C322D; 
     --color-primary: #3C322D;
