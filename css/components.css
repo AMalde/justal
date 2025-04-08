@@ -1,0 +1,339 @@
+
+/*
+    Navigation 
+*/
+
+/* -----------------------------------------------------
+     3) Header & Nav
+     ----------------------------------------------------- */
+     header {
+        padding-top: var(--spacing-xl);
+        background: var(--color-bg);
+        border-bottom: 1px solid #eee;
+      }
+      
+      nav ul {
+        text-align: center;
+        display: flex;
+        justify-content: center;
+        gap: var(--spacing-sm);
+        list-style: none;
+        padding-left: 0;
+      }
+      
+      nav a {
+        text-decoration: none;
+        font-size: var(--font-size-h4);
+        font-weight: 600;
+        color: var(--color-text);
+        padding: var(--spacing-xs) var(--spacing-xs);
+    
+    
+        transform: translateY(0); /* Initial position */
+        transition: 
+        transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), 
+        box-shadow 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), 
+        background-color 0.2s ease-out;
+      }
+    
+      .focused-link { 
+    
+        -webkit-box-shadow: 0px 2px 0px 0px var(--color-accent);
+        -moz-box-shadow: 0px 2px 0px 0px var(--color-accent);
+        box-shadow: 0px 2px 0px 0px var(--color-accent);
+    
+        transform: translateY(0px);
+      }
+    
+    
+      nav a:hover,
+      nav a:focus {
+        -webkit-box-shadow: 0px 2px 0px 0px var(--color-accent);
+        -moz-box-shadow: 0px 2px 0px 0px var(--color-accent);
+        box-shadow: 0px 2px 0px 0px var(--color-accent);
+    
+        transform: translateY(0px);
+      }
+
+/* Tablet and up */
+@media screen and (min-width: var(--bp-tablet)) {
+    nav ul {
+      gap: var(--spacing-md);
+    }
+    main {
+      padding: var(--spacing-lg);
+    }
+    h1 {
+      font-size: calc(var(--font-size-h1) * 1.1);
+    }
+  }
+  
+  /* Desktop and up */
+  @media screen and (min-width: var(--bp-desktop)) {
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    
+    nav ul {
+      gap: var(--spacing-lg);
+    }
+    
+    h1 {
+      font-size: calc(var(--font-size-h1) * 1.2);
+    }
+  }
+  
+  /* Large Desktop */
+  @media screen and (min-width: var(--bp-large-desktop)) {
+    h1 {
+      font-size: calc(var(--font-size-h1) * 1.3);
+    }
+  }
+
+
+
+
+/* 3) BUTTON STYLING 
+     - A general .btn class if you're repeating this style across the site 
+     - Then .work-with-al if you want further variations. */
+    :root {
+        --button-animation-distance: 4px; 
+    }
+    
+    .btn {
+        display: inline-block;
+        text-decoration: none;
+        padding: var(--spacing-sm) var(--spacing-md);
+        border: none;
+        border-radius: 10px;
+        font-weight: 200;
+        font-size: var(--button-text);
+        cursor: pointer;
+        color: #fff;
+
+        background-color: var(--color-accent);
+
+        -webkit-box-shadow: 0px 4px 0px 0px #3C322D;
+        -moz-box-shadow: 0px 4px 0px 0px #3C322D;
+        box-shadow: 0px 4px 0px 0px #3C322D;
+
+        transform: translateY(-4px);
+        transition: 
+        transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), 
+        box-shadow 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), 
+        background-color 0.2s ease-out;
+    }
+
+    @media (max-width: 768px) {
+    .btn {
+        min-height: 44px;
+        padding: var(--spacing-xs) var(--spacing-sm);
+    }
+    }
+      
+      .btn:hover,
+      .btn:focus {
+        background-color: var(--color-accent);
+    
+        -webkit-box-shadow: 0px 8px 0px 0px #3C322D;
+        -moz-box-shadow: 0px 8px 0px 0px #3C322D;
+        box-shadow: 0px 8px 0px 0px #3C322D;
+    
+        transform: translateY(-8px); /* Moves button slightly upwards */
+      }
+    
+      .secondary-button {
+        display: inline-block;
+        text-decoration: none;
+        padding: var(--spacing-sm) var(--spacing-md);
+        border: none;
+        border-radius: 10px;
+        font-weight: 200;
+        font-size: var(--button-text);
+        cursor: pointer;
+    
+        /* Example color scheme: brand color background, white text. */
+        background-color: var(--color-primary);
+        color: #fff;
+    
+        -webkit-box-shadow: 0px 4px 0px 0px #171311;
+        -moz-box-shadow: 0px 4px 0px 0px #171311;
+        box-shadow: 0px 4px 0px 0px #171311;
+    
+        transform: translateY(-4); /* Initial position */
+        transition: 
+        transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), 
+        box-shadow 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), 
+        background-color 0.2s ease-out;
+      }
+    
+      .secondary-button:hover,
+      .secondary-button:focus {
+    
+        -webkit-box-shadow: 0px 8px 0px 0px #171311;
+        -moz-box-shadow: 0px 8px 0px 0px #171311;
+        box-shadow: 0px 8px 0px 0px #171311;
+    
+        transform: translateY(-4px); /* Moves button slightly upwards */
+      }
+
+  @media (max-width: 480px) {
+    .btn {
+        padding: var(--spacing-sm) var(--spacing-sm);
+      }
+    
+      img {
+        max-width: 100%;
+        height: auto;
+      }
+    
+      * {
+        overflow-wrap: break-word;
+        box-sizing: border-box;
+      }
+
+    }
+
+
+      /* 4) Images
+      - should probably bundle some of this together
+      - also just cut the image instead of hiding parts of it...
+      */
+
+
+      .promo-image {
+        position: absolute;
+        bottom: -1rem;  /* move the image partially out of the container */
+        right: -1rem;   /* likewise for the right side */
+        width: 150px;   /* adjust as needed */
+        height: auto;
+        pointer-events: none; /* it's decorative, so no clicks needed */
+        z-index: 0;     /* behind text if overlapping */
+      }
+
+      .project-image { 
+        height: 12rem;
+      }
+    
+      @media (max-width: 480px) {
+    
+        .promo-image {
+          position: absolute;
+          bottom: -1rem;  /* move the image partially out of the container */
+          right: -1rem;   /* likewise for the right side */
+          width: 100px;   /* adjust as needed */
+          height: auto;
+          pointer-events: none; /* it's decorative, so no clicks needed */
+          z-index: 0;     /* behind text if overlapping */
+        }
+      }
+    
+      .service-image {
+        width: 10rem;
+      }
+    
+      
+
+
+
+/* 2) PROMO BOX CONTAINER */
+  
+  .promo-box {
+    position: relative;
+    background: var(--color-raised-bg);
+    border-radius: 1rem; /* Rounded corners */
+    padding: var(--spacing-lg);
+
+
+    overflow: hidden;
+  }
+
+  .promo-box-small {
+    background: var(--color-raised-bg-secondary);
+    border-radius: 1rem; /* Rounded corners */
+    padding: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
+
+    text-align: center;
+
+    overflow: hidden;
+
+    box-sizing: border-box;
+
+    flex: 1;
+  }
+
+  @media (max-width: 480px) {
+    .box-a {
+      order:2;
+    }
+    .box-b {
+      order: 1;
+    }
+    .box-b img {
+      width: 80%;
+    }
+    .promo-box-small {
+      padding: var(--spacing-sm);
+      text-align: left;
+    }
+
+    .promo-box {
+        padding: var(--spacing-sm);
+      }
+    
+      .promo-box-small {
+        padding: var(--spacing-sm);
+        margin-bottom: var(--spacing-sm);
+      }
+
+  }
+
+
+
+
+  /* -----------------------------------------------------
+     5) Footer
+     ----------------------------------------------------- */
+     footer {
+        position:relative;
+        overflow: hidden;
+        background: var(--color-bg-tertiary);
+        padding: var(--spacing-xl);
+        text-align: center;
+        border-radius: 10px 10px 0 0 ;
+
+        margin-top:-8px;
+      }
+      #year {
+        font-weight: 600;
+      }
+
+      .footer-image { 
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+        position: absolute; 
+        left: -3rem; 
+        bottom: -10rem; 
+        width: 20rem; 
+    
+      }
+    
+      @media (max-width: 480px) {
+
+        .footer {
+            padding: var(--spacing-sm);
+        }
+        .footer-image { 
+          -webkit-transform: scaleX(-1);
+          transform: scaleX(-1);
+          position: relative; 
+          left: 0rem; 
+          bottom: -10rem; 
+          width: 20rem; 
+
+          transform: rotate(90deg);
+        }
+      }

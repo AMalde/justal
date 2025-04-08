@@ -7,7 +7,7 @@
     --color-bg-secondary: #E7DED3; 
     --color-raised-bg: #E0D5D0; 
 
-    --color-bg-tertiary: #D5B8AA;
+    --color-bg-tertiary: #DFC8BE;
     --color-raised-bg-secondary: #E7DED3;
     
     --color-text: #3C322D;
@@ -15,7 +15,7 @@
     --color-primary: #3C322D;
     --color-secondary: #ff6600;
     --color-accent: #8D1438;
-    --color-footer-bg: #E0D5D0;
+    --color-footer-bg: #E4D1C8;
   
     /* Typography (font families, sizes) */
     --font-primary: 'XCharter', Georgia, "Times New Roman", Times, serif;
@@ -24,14 +24,14 @@
                     Roboto, "Helvetica Neue", Arial, sans-serif;
   
     /* Base font sizes */
-    --font-size-base: 16px; 
+    --font-size-base: 18px; 
     --font-size-s:  0.75rem; 
-    --font-size-h1: 4.5rem;
-    --font-size-h2: 4.5rem;
+    --font-size-h1: 4rem;
+    --font-size-h2: 4rem;
     --font-size-h3: 1.5rem;
-    --font-size-h4: 1.25rem;
-    --promo-text: 2.3rem;
-    --button-text: 1.7rem;
+    --font-size-h4: 1.1rem;
+    --promo-text: 2rem;
+    --button-text: 1.3rem;
   
     /* Spacing */
     --spacing-xxs: 0.25rem;
@@ -43,6 +43,7 @@
     --spacing-xxl: 5rem;
   
     /* Breakpoints */
+    --bp-mobile-small: 360px;
     --bp-mobile: 480px;
     --bp-tablet: 768px;
     --bp-desktop: 1024px;
@@ -75,18 +76,10 @@
       --font-size-h3: 1.2rem;
       --font-size-h4: 1.25rem;
       --button-text: 1.3rem;
-      --promo-text: 1.5rem;
+      --promo-text: 1.4rem;
     }
 
-    .footer-image { 
-      -webkit-transform: scaleX(-1);
-      transform: scaleX(-1);
-      position: relative; 
-      left: -3rem; 
-      bottom: -10rem; 
-      width: 5rem; 
-  
-    }
+   
   }
   
   /* Very small phones: max width 360px */
@@ -97,32 +90,70 @@
       --font-size-h2: 2rem;
       --font-size-h3: 1.2rem;
       --font-size-h4: 1.25rem;
-      --button-text: 1.3rem;
-      --promo-text: 1.5rem;
 
       --button-text: 1rem;
-      --promo-text: 1.5rem;
+      --promo-text: 1.2rem;
     }
   }
 
-  /* -----------------------------------------------------
+   /* -----------------------------------------------------
      2) Basic Resets / Global
      ----------------------------------------------------- */
-  * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+     * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+  
+    .mvp-image {
+      position: absolute; 
+      top: 3rem; 
+      right: 3rem; 
+      width: 8rem;
+    }
+    
+    html {
+      font-size: var(--font-size-base);
+      background: var(--color-bg);
+      color: var(--color-text);
+    }
+    
+    body {
+      margin: 0 auto;
+      font-family: var(--font-primary);
+      line-height: 1.5;
+    }
+  
+    
+
+
+  /* 5) Screen Reader Only class (optional) 
+     - If you want to hide <h3 id="promo-box-title"> visually but keep it for screen readers */
+     .sr-only {
+      position: absolute !important;
+      width: 1px; 
+      height: 1px; 
+      padding: 0; 
+      margin: -1px; 
+      overflow: hidden;
+      clip: rect(0,0,0,0);
+      white-space: nowrap; 
+      border: 0;
+    }
+
+    /* A class for our skip link */
+  .skip-to-content {
+    position: absolute;
+    top: -999px;
+    left: -999px;
+    background: var(--color-primary);
+    color: #fff;
+    padding: var(--spacing-xs);
+    z-index: 1000;
   }
-
-  html {
-    font-size: var(--font-size-base);
-    background: var(--color-bg);
-    color: var(--color-text);
-  }
-
-  body {
-    margin: 0 auto;
-
+  .skip-to-content:focus {
+    top: 0;
+    left: 0;
   }
 
   /* -----------------------------------------------------

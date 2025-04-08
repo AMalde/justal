@@ -1,0 +1,100 @@
+main {
+    /*padding: var(--spacing-md);*/
+    transition: opacity 0.3s ease-out; /* for fade animations */
+    overflow: hidden;
+  }
+
+
+
+.container {
+    max-width: 800px; /* Adjust as needed */
+    width: 90%; /* Responsive: scales down nicely on smaller screens */
+    margin: 0 auto; /* Centers horizontally */
+    padding-left: 2rem; /* Adjust padding to your taste */
+    padding-right: 2rem; /* Adjust padding to your taste */
+    box-sizing: border-box; /* Includes padding in total width */
+  }
+
+  section { 
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+  
+  section:last-of-type {
+    /* Styles here apply only to the last <section> on the page */
+    margin-bottom: 0;
+  }
+
+  
+  @media (max-width: 480px) {
+
+    .container, .section {
+      padding: var(--spacing-xs);
+      margin: 0 auto;
+    }
+  
+  
+    .flex-container {
+      flex-direction: column;
+      gap: var(--spacing-xs);
+    }
+  }
+
+  
+
+  .centered {
+    width: 100%;
+    display: inline-block;
+    text-align: center;
+  }
+ 
+ 
+ /*
+    Spacing between sections
+  */
+
+  .space-above {
+    margin-top: var(--spacing-lg);
+  }
+
+  .flex-container {  
+    width: 100%;
+
+    display:flex; 
+    gap: 1rem;
+  }
+
+  .service-container {
+    text-align: center;
+    flex: 1;
+    padding: var(--spacing-md);
+  }
+
+
+
+
+@media (max-width: 768px) {
+    .container, .section {
+      padding-left: var(--spacing-sm);
+      padding-right: var(--spacing-sm);
+      margin: 0 auto;
+    }
+
+    .flex-container {
+        flex-direction: column;
+        gap: var(--spacing-sm);
+      }
+}
+
+@media (max-width: 480px) {
+
+    .container, .section {
+      padding: var(--spacing-xs);
+      margin: 0 auto;
+    }
+  
+    .flex-container {
+      flex-direction: column;
+      gap: var(--spacing-xs);
+    }
+  }

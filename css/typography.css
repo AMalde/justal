@@ -62,5 +62,70 @@
 /* -----------------------------------------------------
    2) Typography
    ----------------------------------------------------- */
+
+
+.centered-text {
+    text-align: center;
+  }
+  
+  /* Headings */
+  h1 {
+    font-size: var(--font-size-h1);
+    margin-bottom: var(--spacing-lg);
+  }
+  h2 {
+    font-size: var(--font-size-h2);
+    margin-bottom: var(--spacing-sm);
+  }
+  h3 {
+    font-size: var(--font-size-h3);
+    margin-bottom: var(--spacing-xs);
+  }
+  p {
+    margin-bottom: var(--spacing-sm);
+  }
+
+  .promo-text {
+    font-size: var(--promo-text); /* slightly smaller than your big headers, but still large */
+    margin-bottom: var(--spacing-xl);
+    line-height: 1.4;
+  }
+  
+  figure {
+    margin: var(--spacing-sm) 0;
+  }
+  figcaption {
+    font-size: 0.875rem;
+    color: #666;
+  }
+
+  .fine-print {
+    font-size: var(--font-size-s);
+    font-weight: 100;
+    color: var(--color-text-secondary); 
+    display: block; 
+    margin-top: 0.25rem; 
+  }
    
-   
+   /* 1) MIXED-FONT HEADER 
+   - "AL" in Figma Hand, rest in Lava Devanagari (or your chosen body font) */
+
+.mixed-header {
+    font-size: var(--font-size-h1); /* or bigger if you prefer */
+    font-weight: 100; 
+    margin-bottom: var(--spacing-md);
+    line-height: 1.2; /* to give it a bold, large look */
+    text-align: center;
+  }
+  
+  .mixed-header .brand-al {
+    /* Figma Hand for "AL" */
+    font-family: 'JustAnotherHand', cursive; /* Replace with your actual @font-face or external link */
+    font-size: calc(var(--font-size-h1) * 1.7);
+  }
+  
+  .mixed-header .regular-font {
+    /* Lava Devanagari or your normal font */
+    font-family: 'Lava Devanagari', var(--font-primary), sans-serif;
+    font-weight: 600;
+  }

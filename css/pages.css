@@ -1,0 +1,27 @@
+
+.work-with-al {
+    /* optional overrides, e.g.:
+    background-color: var(--color-accent);
+    min-width: 160px; 
+    */
+  }
+
+
+/* SECTIONS
+*/
+.al-has-a-product-line {
+    background-color:var(--color-bg-secondary); 
+  }
+
+.al-is-a-designer {
+    padding-bottom: 8rem;
+}
+.part-of-koolas {
+    padding-bottom: 8rem;
+}
+
+@media (max-width: 480px) {
+    .al-is-a-designer {
+        padding-bottom: 4rem;
+    }
+}

@@ -54,6 +54,11 @@
   <link href="https://calendar.google.com/calendar/scheduling-button-script.css" rel="stylesheet">
   <link rel="stylesheet" href="/css/variables.css">
   <link rel="stylesheet" href="/css/typography.css">
+
+  <link rel="stylesheet" href="/css/layout.css">
+  <link rel="stylesheet" href="/css/components.css">
+  <link rel="stylesheet" href="/css/pages.css">
+
   <link rel="stylesheet" href="/css/style.css">
   
   <!-- Main JS (defer ensures it runs after HTML is parsed) -->
@@ -142,7 +147,7 @@
 
           <h2 id="section-title" class="mixed-header">
             <!-- The word AL is wrapped in a special span for the Figma Hand font -->
-            <span class="brand-al">al</span> has a <span class="regular-font">Product line</span>
+            <span class="brand-al">al</span> has <span class="regular-font">Products</span>
           </h2>
           <p class="promo-text centered-text">
             A fine selection of <b>hand coded</b> software for desktop and phone. 
@@ -151,7 +156,7 @@
 
           <div class="flex-container">
             <div class="promo-box-small flex-container" role="region" aria-labelledby="promo-box-title" style="background-color:#DBCEBD;">
-              <div class="box">
+              <div class="box box-a">
                  <!-- Visually hidden heading if needed for screen readers, or keep it visible if you prefer -->
                 <h3 id="promo-box-title" class="sr-only">Al’s Offer</h3>
           
@@ -166,10 +171,10 @@
                   Learn about <b>Alakazam</b>
                 </a>
               </div>
-              <div class="box centered-text">
+              <div class="box box-b centered-text">
                 <img 
                   class="product-image" 
-                  src="/images/alakazam.png" 
+                  src="/images/flower.svg" 
                   alt="Illustration of Alakazam, a magical software product by Al"
                 />
               </div> 
@@ -188,13 +193,12 @@
 
 <footer role="contentinfo" aria-labelledby="footer-heading">
   <h2 id="footer-heading" class="mixed-header" style="margin-bottom: 0">
-    <!-- The word AL is wrapped in a special span for the Figma Hand font -->
-    <span class="brand-al">al</span> has a footer in his <span class="regular-font"> AS</span>
-  </h2>
-  <p class="promo-text centered-text">You can contact him on</p>
+    <span class="brand-al">al</span> has a footer in his <span class="regular-font">AS</span>
+ </h2>
   <a href="mailto:al@justal.no" class="btn check-out-koolektivet">
     al@justal.no
   </a>
+  <small class="fine-print centered-text" style="margin-top: 1rem;">© 2025 alas</small> 
 
   <!-- footer image -->
   <img 
